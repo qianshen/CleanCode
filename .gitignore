@@ -1,0 +1,5 @@
+*/bin/
+*/*/bin/
+.ds_store
+*.userprefs
+*/test-results/
