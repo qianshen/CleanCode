@@ -34,6 +34,7 @@
   <ItemGroup>
     <Folder Include="Objects\" />
     <Folder Include="DataStructures\" />
+    <Folder Include="LoD\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Objects\Shape.cs" />
@@ -44,5 +45,9 @@
     <Compile Include="DataStructures\Square.cs" />
     <Compile Include="DataStructures\Triangle.cs" />
     <Compile Include="DataStructures\ShapeHelper.cs" />
+    <Compile Include="LoD\Car.cs" />
+    <Compile Include="LoD\Engine.cs" />
+    <Compile Include="LoD\Driver.cs" />
+    <Compile Include="LoD\Tyre.cs" />
   </ItemGroup>
 </Project>

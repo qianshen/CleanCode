@@ -13,6 +13,7 @@ namespace CleanCode.Chapter6.DataStructures
 			} else if (shape.GetType () == typeof(Triangle)) {
 				return GetTriangleArea((Triangle)shape);
 			}
+			throw new NotSupportedException();
 		}
 
 		private static double GetRectangleArea(Rectangle rect)

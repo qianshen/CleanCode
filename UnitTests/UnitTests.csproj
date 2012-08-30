@@ -41,4 +41,10 @@
   <ItemGroup>
     <Compile Include="Chapter6\ObjectsTest.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Chapter6\Chapter6.csproj">
+      <Project>{F636F77A-3B11-45AD-9DA4-EA92FEA98AD4}</Project>
+      <Name>Chapter6</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
