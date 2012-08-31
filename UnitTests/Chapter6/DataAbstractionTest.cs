@@ -3,10 +3,10 @@ using NUnit.Framework;
 using Objects = CleanCode.Chapter6.Objects;
 using DataStructures = CleanCode.Chapter6.DataStructures;
 
-namespace UnitTests
+namespace CleanCode.Chapter6.Tests
 {
 	[TestFixture()]
-	public class ObjectsTest
+	public class DataAbstractionTest
 	{
 		[Test()]
 		public void ObjectsGetArea ()

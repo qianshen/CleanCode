@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{F636F77A-3B11-45AD-9DA4-EA92FEA98AD4}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Chapter6</RootNamespace>
+    <RootNamespace>CleanCode.Chapter6</RootNamespace>
     <AssemblyName>Chapter6</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -45,6 +45,9 @@
     <Compile Include="LoD\Engine.cs" />
     <Compile Include="LoD\Driver.cs" />
     <Compile Include="LoD\Tyre.cs" />
+    <Compile Include="LoD\Mechanician.cs" />
+    <Compile Include="LoD\ISkill.cs" />
+    <Compile Include="LoD\Empolyee.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

@@ -2,16 +2,15 @@ using System;
 
 namespace CleanCode.Chapter6.LoD
 {
-	public class Driver
+	public class Driver : ISkill
 	{
 		public Driver ()
 		{
 		}
 
-		// driver drive car as general work.
-		// prepare car if car is broken.
-		public void Work()
+		public void DriveCar(Car car)
 		{
+			car.Start();
 		}
 	}
 }

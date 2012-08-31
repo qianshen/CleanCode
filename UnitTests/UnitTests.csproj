@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{77150C23-4F17-440E-9B3C-AA42F14EC2EE}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>UnitTests</RootNamespace>
+    <RootNamespace>CleanCode</RootNamespace>
     <AssemblyName>UnitTests</AssemblyName>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
@@ -32,7 +32,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="nunit.framework">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NUnit.2.6.1\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -42,7 +41,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Chapter6\ObjectsTest.cs" />
+    <Compile Include="Chapter6\DataAbstractionTest.cs" />
+    <Compile Include="Chapter6\LoD\LoDTest.cs" />
+    <Compile Include="Chapter6\LoD\CarTest.cs" />
+    <Compile Include="Chapter6\LoD\EmpolyeeTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Chapter6\Chapter6.csproj">
@@ -51,4 +53,7 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <ItemGroup>
+    <Folder Include="Chapter6\LoD\" />
+  </ItemGroup>
 </Project>
