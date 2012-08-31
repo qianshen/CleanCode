@@ -50,6 +50,7 @@ namespace UnitTests
 
 			Assert.AreEqual(6, DataStructures.ShapeHelper.GetArea(tri));
 		}
+
 	}
 }
 
