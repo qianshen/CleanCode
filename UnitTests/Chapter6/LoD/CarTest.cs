@@ -34,16 +34,6 @@ namespace CleanCode.Chapter6.LoD.Tests
 
 		[ExpectedException(typeof(InvalidOperationException))]
 		[Test]
-		public void BuildCarNullEngine()
-		{
-			var tyres = CreateTyres(Car.StandardTyreCount);
-
-			var car = new Car(null, tyres);
-			Assert.Fail();
-		}
-
-		[ExpectedException(typeof(InvalidOperationException))]
-		[Test]
 		public void BuildCarTooMuchTyres()
 		{
 			var engine = CreateEngine();

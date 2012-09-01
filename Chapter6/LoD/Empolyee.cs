@@ -21,7 +21,13 @@ namespace CleanCode.Chapter6.LoD
 
 		public T GetSkill<T>() where T : class, ISkill
 		{
-			return _skillSet[typeof(T)] as T;
+            ISkill skill;
+
+            if (!_skillSet.TryGetValue(typeof(T), out skill))
+            {
+                skill = null;
+            }
+            return skill as T;
 		}
 	}
 }

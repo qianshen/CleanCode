@@ -33,6 +33,7 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup />
   <ItemGroup>
+    <Compile Include="LoD\Scenario.cs" />
     <Compile Include="Objects\Shape.cs" />
     <Compile Include="Objects\Rectangle.cs" />
     <Compile Include="Objects\Square.cs" />

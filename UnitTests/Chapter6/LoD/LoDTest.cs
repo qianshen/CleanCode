@@ -1,5 +1,6 @@
 using System;
 using NUnit.Framework;
+using System.Collections;
 
 namespace CleanCode.Chapter6.LoD.Tests
 {
@@ -7,8 +8,10 @@ namespace CleanCode.Chapter6.LoD.Tests
 	public class LoDTest
 	{
 		[Test()]
-		public void Car ()
+		public void Scenario1()
 		{
+            
+
 		}
 	}
 }
