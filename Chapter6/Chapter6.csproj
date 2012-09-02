@@ -48,7 +48,9 @@
     <Compile Include="LoD\Tyre.cs" />
     <Compile Include="LoD\Mechanician.cs" />
     <Compile Include="LoD\ISkill.cs" />
-    <Compile Include="LoD\Empolyee.cs" />
+    <Compile Include="LoD\Employee.cs" />
+    <Compile Include="LoD\RoundRobinScenario.cs" />
+    <Compile Include="LoD\WorkState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

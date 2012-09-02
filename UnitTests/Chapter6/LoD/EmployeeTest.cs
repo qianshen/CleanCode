@@ -4,12 +4,12 @@ using NUnit.Framework;
 namespace CleanCode.Chapter6.LoD.Tests
 {
 	[TestFixture()]
-	public class EmpolyeeTest
+	public class EmployeeTest
 	{
 		[Test()]
 		public void NullSkill()
 		{
-			var emp = new Empolyee();
+			var emp = new Employee("");
 
             var driver = emp.GetSkill<Driver>();
 
@@ -19,7 +19,9 @@ namespace CleanCode.Chapter6.LoD.Tests
 		[Test]
 		public void DriverSkill()
 		{
-            var emp = new Empolyee(new Driver());
+            var emp = new Employee(
+				"",
+				new Driver());
 
             var driver = emp.GetSkill<Driver>();
 
@@ -33,7 +35,11 @@ namespace CleanCode.Chapter6.LoD.Tests
         [Test]
         public void TwoSkills()
         {
-            var emp = new Empolyee(new Driver(), new Mechanician());
+            var emp = new Employee(
+				"",
+				new Driver(), 
+				new Mechanician()
+				);
 
             var driver = emp.GetSkill<Driver>();
 

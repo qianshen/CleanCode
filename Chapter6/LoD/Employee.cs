@@ -3,14 +3,16 @@ using System.Collections.Generic;
 
 namespace CleanCode.Chapter6.LoD
 {
-	public class Empolyee
+	public class Employee
 	{
 		Dictionary<Type, ISkill> _skillSet = new Dictionary<Type, ISkill>();
 
-		public Empolyee (
+		public Employee (
+			string name,
 			params ISkill[] skills
 		)
 		{
+			Name = name;
 			if (skills != null) {
 				foreach(var skill in skills)
 				{
@@ -21,13 +23,26 @@ namespace CleanCode.Chapter6.LoD
 
 		public T GetSkill<T>() where T : class, ISkill
 		{
-            ISkill skill;
+			var skill = GetSkill(typeof(T));
 
-            if (!_skillSet.TryGetValue(typeof(T), out skill))
+            return skill as T;
+		}
+
+		public ISkill GetSkill(Type type)
+		{
+			ISkill skill;
+
+			if (!_skillSet.TryGetValue(type, out skill))
             {
                 skill = null;
             }
-            return skill as T;
+			return skill;
+		}
+
+		public string Name
+		{
+			get;
+			private set;
 		}
 	}
 }

@@ -99,7 +99,7 @@ namespace CleanCode.Chapter6.LoD
 
 		public bool IsBroken {
 			get {
-				return IsEngineBroken && IsTyreBroken;
+				return IsEngineBroken || IsTyreBroken;
 			}
 		}
 

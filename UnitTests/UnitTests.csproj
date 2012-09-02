@@ -44,7 +44,7 @@
     <Compile Include="Chapter6\DataAbstractionTest.cs" />
     <Compile Include="Chapter6\LoD\LoDTest.cs" />
     <Compile Include="Chapter6\LoD\CarTest.cs" />
-    <Compile Include="Chapter6\LoD\EmpolyeeTest.cs" />
+    <Compile Include="Chapter6\LoD\EmployeeTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Chapter6\Chapter6.csproj">
