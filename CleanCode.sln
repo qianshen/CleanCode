@@ -12,16 +12,28 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3BD25A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter6", "Chapter6\Chapter6.csproj", "{F636F77A-3B11-45AD-9DA4-EA92FEA98AD4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter7", "Chapter7\Chapter7.csproj", "{5DE8FB23-83AF-4013-B643-84C4532A1B34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter10", "Chapter10\Chapter10.csproj", "{97988B30-EE32-4C43-AD0B-6A9F7AF1B665}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5DE8FB23-83AF-4013-B643-84C4532A1B34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DE8FB23-83AF-4013-B643-84C4532A1B34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DE8FB23-83AF-4013-B643-84C4532A1B34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DE8FB23-83AF-4013-B643-84C4532A1B34}.Release|Any CPU.Build.0 = Release|Any CPU
 		{77150C23-4F17-440E-9B3C-AA42F14EC2EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{77150C23-4F17-440E-9B3C-AA42F14EC2EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77150C23-4F17-440E-9B3C-AA42F14EC2EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77150C23-4F17-440E-9B3C-AA42F14EC2EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97988B30-EE32-4C43-AD0B-6A9F7AF1B665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97988B30-EE32-4C43-AD0B-6A9F7AF1B665}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97988B30-EE32-4C43-AD0B-6A9F7AF1B665}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97988B30-EE32-4C43-AD0B-6A9F7AF1B665}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F636F77A-3B11-45AD-9DA4-EA92FEA98AD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F636F77A-3B11-45AD-9DA4-EA92FEA98AD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F636F77A-3B11-45AD-9DA4-EA92FEA98AD4}.Release|Any CPU.ActiveCfg = Release|Any CPU

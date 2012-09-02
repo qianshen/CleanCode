@@ -45,15 +45,21 @@
     <Compile Include="Chapter6\LoD\LoDTest.cs" />
     <Compile Include="Chapter6\LoD\CarTest.cs" />
     <Compile Include="Chapter6\LoD\EmployeeTest.cs" />
+    <Compile Include="Chapter7\TransmitterTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Chapter6\Chapter6.csproj">
       <Project>{F636F77A-3B11-45AD-9DA4-EA92FEA98AD4}</Project>
       <Name>Chapter6</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Chapter7\Chapter7.csproj">
+      <Project>{5DE8FB23-83AF-4013-B643-84C4532A1B34}</Project>
+      <Name>Chapter7</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <ItemGroup>
     <Folder Include="Chapter6\LoD\" />
+    <Folder Include="Chapter7\" />
   </ItemGroup>
 </Project>
