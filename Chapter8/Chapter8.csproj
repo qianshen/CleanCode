@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C11E9265-C265-4BF3-951E-88F2B80417CE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CleanCode.Chapter8</RootNamespace>
+    <AssemblyName>Chapter8</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Moq">
+      <HintPath>..\Lib\Moq.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ContactImport\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContactImport\Contact.cs" />
+    <Compile Include="ContactImport\ContactImporterFactory.cs" />
+    <Compile Include="ContactImport\ContactImporterWrapper.cs" />
+    <Compile Include="ContactImport\ContactListImportService.cs" />
+    <Compile Include="ContactImport\IContactImporter.cs" />
+    <Compile Include="ContactImport\IContactImporterFactory.cs" />
+    <Compile Include="ContactImport\IContactListService.cs" />
+    <Compile Include="ContactImport\ImportResult.cs" />
+    <Compile Include="ContactImport\ContactImporter.cs" />
+  </ItemGroup>
+</Project>
