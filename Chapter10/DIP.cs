@@ -7,9 +7,11 @@ using EFSchools.Englishtown.Oboe2.Lookups;
 
 namespace EFSchools.Englishtown.Oboe.BookingRuleFramework.Booking.Rules.Mini
 {
+	#region Note
 	// doing too much in one method
 	// low level coupling - ClassCategoryGroupCacheSvc.Instance.GetClassCategoryGroupInfoByClassCategory
 	// weekly count, monthly count etc. I saw smell of violation of OCP.
+	#endregion
 
     [MiniBookingRuleCategory(MiniClassCategorys = new ClassCategory[] { ClassCategory.CW, ClassCategory.LC, ClassCategory.WS, ClassCategory.F2F })]
     class CommonBookingLimitBookingRule : IMiniBookingRule

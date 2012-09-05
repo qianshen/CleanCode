@@ -6,9 +6,11 @@ using System.ComponentModel.Composition;
 
 namespace EFSchools.Englishtown.Oboe.BookingRuleFramework.Rules
 {
+	#region Note
 	// Adding new booking rule is good open close to new rules
 	// Adding interface support later is the same as adding functions. Breaking OCP unless these interfaces are used for grouping only.
 	// I see switch. A bad smell if logic change, we must change the codes which affects all types.
+	#endregion
 
     /// <summary>
     /// Check open/weekly/monthly booking limit for LC + CW 

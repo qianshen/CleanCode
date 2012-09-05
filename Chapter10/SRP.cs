@@ -144,19 +144,19 @@ namespace EFSchools.Englishtown.Oboe.ClassRoom
     
 		// what's problem here?
 
-//        public bool ShouldHideOnUTCDate(ClassRoomLkp classRoomLkp, DateTime utcDate)
-//        {
-//            if(classRoomLkp.IsHidden)
-//            {
-//                var lastDateScheduled = GetLastDateClassroomScheduled(classRoomLkp.Classroom_id);
-//                if(lastDateScheduled!=null)
-//                    return utcDate >= GetNextMonday(lastDateScheduled.Value.ConvertFromUTCToSchool(classRoomLkp.School_id));
-//                else
-//                    return true;
-//            }
-//
-//            return false;
-//        }
+        public bool ShouldHideOnUTCDate(ClassRoomLkp classRoomLkp, DateTime utcDate)
+        {
+            if(classRoomLkp.IsHidden)
+            {
+                var lastDateScheduled = GetLastDateClassroomScheduled(classRoomLkp.Classroom_id);
+                if(lastDateScheduled!=null)
+                    return utcDate >= GetNextMonday(lastDateScheduled.Value.ConvertFromUTCToSchool(classRoomLkp.School_id));
+                else
+                    return true;
+            }
+
+            return false;
+        }
 
         private DateTime? GetLastDateClassroomScheduled(int classRoomId)
         {

@@ -14,10 +14,17 @@ using EFSchools.Englishtown.Oboe.Student.Sprocs;
 using EFSchools.Englishtown.Oboe.ScheduledClass.Models;
 using System.Collections.Generic;
 
+#region Note
 // Doing too much in one method. Divide it into serveral steps
 // After that, we find cohesion of class break coz of private variable is only useful to one function.
 // It sound we need to move these functions to its own Mgr class
 // Take a look at these class, we find they are actually doing something we have somewhere else. We are repeating ourselves.
+
+// DRY
+// Develop system more efficiently
+// Lower complxity, Easy to read and understand codes
+// Minimize change impacts
+#endregion
 
 namespace EFSchools.Englishtown.Oboe.BookingRuleContext
 {
