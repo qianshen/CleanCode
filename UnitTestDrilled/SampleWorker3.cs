@@ -2,63 +2,63 @@ using System;
 
 namespace UnitTestDrilled
 {
-	public class SampleWorker2
+	public class SampleWorker3
 	{
-		public SampleWorker2 ()
+		public SampleWorker3 ()
 		{
 		}
 
-		public void Work (DateTime date1, DateTime date2, DateTime date3, DateTime date4)
+		public void Work (DateTime date)
 		{
 
-			if (IsWeekend()) {
+			if (IsWeekend(date)) {
 				Rest();
 			}
 
-			if (ShouldRest()) {
+			if (ShouldRest(date)) {
 				Rest ();
 			}
 
-			if (ShouldLunch()) {
+			if (ShouldLunch(date)) {
 				Lunch ();
 			}
 
-			if (ShouldNotWork()) {
+			if (ShouldNotWork(date)) {
 				Rest ();
 			} else {
 				DoWork();
 			}
 		}
 
-		internal virtual bool IsWeekend (DateTime date)
+		internal bool IsWeekend (DateTime date)
 		{
 			return date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday;
 		}
 
-		internal virtual bool ShouldRest(DateTime date)
+		internal bool ShouldRest(DateTime date)
 		{
 			return date.Hour < 9 || date.Hour > 17;
 		}
 
-		internal virtual bool ShouldLunch (DateTime date)
+		internal bool ShouldLunch (DateTime date)
 		{
 			return date.Hour >= 12 && date.Hour < 14;
 		}
 
-		internal virtual bool ShouldNotWork (DateTime date)
+		internal bool ShouldNotWork (DateTime date)
 		{
 			return date.Minute % 3 == 0;
 		}
 
-	    void Rest()
+	    internal void Rest()
 		{
 		}
 
-		void Lunch()
+		internal void Lunch()
 		{
 		}
 
-		void DoWork()
+		internal void DoWork()
 		{
 		}
 	}

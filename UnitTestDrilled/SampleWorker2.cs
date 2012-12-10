@@ -2,34 +2,52 @@ using System;
 
 namespace UnitTestDrilled
 {
-	public class SampleWorker
+	public class SampleWorker2
 	{
-		public SampleWorker ()
+		public SampleWorker2 ()
 		{
 		}
 
-		public void Work (DateTime date1, DateTime date2, DateTime date3, DateTime date4)
+		public void Work (DateTime date)
 		{
 
-			if (date1.DayOfWeek == DayOfWeek.Saturday || date1.DayOfWeek == DayOfWeek.Sunday) {
-				return;
+			if (IsWeekend(date)) {
+				Rest();
 			}
 
-			if (date2.Hour < 9 || date2.Hour > 17) {
+			if (ShouldRest(date)) {
 				Rest ();
-				return;
 			}
 
-			if (date3.Hour >= 12 && date3.Hour < 14) {
+			if (ShouldLunch(date)) {
 				Lunch ();
-				return;
 			}
 
-			if (date4.Minute % 3 == 0) {
+			if (ShouldNotWork(date)) {
 				Rest ();
 			} else {
 				DoWork();
 			}
+		}
+
+		internal virtual bool IsWeekend (DateTime date)
+		{
+			return date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday;
+		}
+
+		internal virtual bool ShouldRest(DateTime date)
+		{
+			return date.Hour < 9 || date.Hour > 17;
+		}
+
+		internal virtual bool ShouldLunch (DateTime date)
+		{
+			return date.Hour >= 12 && date.Hour < 14;
+		}
+
+		internal virtual bool ShouldNotWork (DateTime date)
+		{
+			return date.Minute % 3 == 0;
 		}
 
 	    void Rest()
@@ -45,4 +63,15 @@ namespace UnitTestDrilled
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+		// 3 + 3 + 3 + 2 + 2 * 2 * 2 * 2 = 27
+
 

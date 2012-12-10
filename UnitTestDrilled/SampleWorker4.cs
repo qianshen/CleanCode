@@ -2,50 +2,82 @@ using System;
 
 namespace UnitTestDrilled
 {
-	public class SampleWorker3
+	public class SampleWorker4
 	{
-		public SampleWorker3 ()
+		public SampleWorker4 ()
 		{
 		}
 
-		public void Work (DateTime date1, DateTime date2, DateTime date3, DateTime date4)
+		public void Work (DateTime date)
 		{
 
-			if (IsWeekend()) {
-				Rest();
-			}
+			GoWeekend(date);
 
-			if (ShouldRest()) {
+			GoRest(date);
+
+			GoLunch(date);
+
+			GoToWork(date);
+		}
+
+		internal bool GoWeekend (DateTime date)
+		{
+			if (IsWeekend (date)) {
 				Rest ();
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		internal bool GoRest (DateTime date)
+		{
+			if (ShouldRest (date)) {
+				Rest ();
+				return true;
+			} else {
+				return false;
 			}
 
-			if (ShouldLunch()) {
+		}
+
+		internal bool GoLunch (DateTime date)
+		{
+			if (ShouldLunch (date)) {
 				Lunch ();
+				return true;
+			} else {
+				return false;
 			}
+		}
 
-			if (ShouldNotWork()) {
+		internal bool GoToWork(DateTime date)
+		{
+			if (ShouldNotWork(date)) {
 				Rest ();
+				return false;
 			} else {
 				DoWork();
+				return true;
 			}
 		}
 
-		internal virtual bool IsWeekend (DateTime date)
+		internal bool IsWeekend (DateTime date)
 		{
 			return date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday;
 		}
 
-		internal virtual bool ShouldRest(DateTime date)
+		internal bool ShouldRest(DateTime date)
 		{
 			return date.Hour < 9 || date.Hour > 17;
 		}
 
-		internal virtual bool ShouldLunch (DateTime date)
+		internal bool ShouldLunch (DateTime date)
 		{
 			return date.Hour >= 12 && date.Hour < 14;
 		}
 
-		internal virtual bool ShouldNotWork (DateTime date)
+		internal bool ShouldNotWork (DateTime date)
 		{
 			return date.Minute % 3 == 0;
 		}
@@ -64,3 +96,13 @@ namespace UnitTestDrilled
 	}
 }
 
+
+
+
+
+
+
+
+
+
+//3 + 3 + 3 + 2 + 2 + 2 + 2 + 2 + 1 = 20

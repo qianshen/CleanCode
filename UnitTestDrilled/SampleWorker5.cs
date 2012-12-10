@@ -1,28 +1,63 @@
 using System;
+using System.Collections.Generic;
 
 namespace UnitTestDrilled
 {
-	public class SampleWorker4
+	public class SampleWorker5
 	{
-		public SampleWorker4 ()
+		Dictionary<Type, ILife> _lifeStyles = new Dictionary<Type, ILife>();
+
+		internal SampleWorker5 (
+			params ILife[] lifeStyles
+		)
 		{
+			foreach (var lifeStyle in lifeStyles) {
+				_lifeStyles.Add(lifeStyle.GetType(), lifeStyle);
+			}
 		}
 
-		public void Work (DateTime date1, DateTime date2, DateTime date3, DateTime date4)
+		public void Work (DateTime date)
 		{
-
-			GoWeekend(date1);
-
-			GoRest(date2);
-
-			GoLunch(date3);
-
-			GoToWork(date4);
+			foreach (var lifeStyle in _lifeStyles.Values) {
+				lifeStyle.GoLife(date);
+			}
 		}
 
-		internal bool GoWeekend (DateTime date)
+	}
+
+	interface ILife
+	{
+		bool GoLife(DateTime date);
+	}
+
+	static class DateTimeExtension
+	{
+		public static bool IsWeekend (this DateTime date)
 		{
-			if (IsWeekend (date)) {
+			return date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday;
+		}
+
+		public static bool ShouldRest(this DateTime date)
+		{
+			return date.Hour < 9 || date.Hour > 17;
+		}
+
+		public static bool ShouldLunch (this DateTime date)
+		{
+			return date.Hour >= 12 && date.Hour < 14;
+		}
+
+		public static bool ShouldNotWork (this DateTime date)
+		{
+			return date.Minute % 3 == 0;
+		}
+	}
+
+	class WeekendLife : ILife
+	{
+		public bool GoLife (DateTime date)
+		{
+			if (date.IsWeekend()) {
 				Rest ();
 				return true;
 			} else {
@@ -30,20 +65,33 @@ namespace UnitTestDrilled
 			}
 		}
 
-		internal bool GoRest (DateTime date)
+		internal void Rest()
 		{
-			if (ShouldRest (date)) {
+		}
+	}
+
+	class ResetLife : ILife
+	{
+		public bool GoLife (DateTime date)
+		{
+			if (date.ShouldRest ()) {
 				Rest ();
 				return true;
 			} else {
 				return false;
 			}
-
 		}
 
-		internal bool GoLunch (DateTime date)
+		internal void Rest()
 		{
-			if (ShouldLunch (date)) {
+		}
+	}
+
+	class LunchLife : ILife
+	{
+		public bool GoLife (DateTime date)
+		{
+			if (date.ShouldLunch()) {
 				Lunch ();
 				return true;
 			} else {
@@ -51,9 +99,16 @@ namespace UnitTestDrilled
 			}
 		}
 
-		internal bool GoToWork(DateTime date)
+		internal void Lunch()
 		{
-			if (ShouldNotWork(date)) {
+		}
+	}
+
+	class WorkLife : ILife
+	{
+		public bool GoLife (DateTime date)
+		{
+			if (date.ShouldNotWork()) {
 				Rest ();
 				return false;
 			} else {
@@ -62,31 +117,7 @@ namespace UnitTestDrilled
 			}
 		}
 
-		internal virtual bool IsWeekend (DateTime date)
-		{
-			return date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday;
-		}
-
-		internal virtual bool ShouldRest(DateTime date)
-		{
-			return date.Hour < 9 || date.Hour > 17;
-		}
-
-		internal virtual bool ShouldLunch (DateTime date)
-		{
-			return date.Hour >= 12 && date.Hour < 14;
-		}
-
-		internal virtual bool ShouldNotWork (DateTime date)
-		{
-			return date.Minute % 3 == 0;
-		}
-
-	    internal void Rest()
-		{
-		}
-
-		internal void Lunch()
+		internal void Rest()
 		{
 		}
 
@@ -105,4 +136,4 @@ namespace UnitTestDrilled
 
 
 
-3 + 3 + 3 + 2 + 2 + 2 + 2 + 2 + 1 = 20
+//3 + 3 + 3 + 2 + 2 + 2 + 2 + 2 + 1 = 20

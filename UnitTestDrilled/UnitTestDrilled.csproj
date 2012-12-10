@@ -6,7 +6,7 @@
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{36AB5923-873E-47D9-84EF-38D7257F4DC0}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>UnitTestDrilled</RootNamespace>
     <AssemblyName>UnitTestDrilled</AssemblyName>
   </PropertyGroup>
@@ -29,4 +29,11 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="SampleWorker.cs" />
+    <Compile Include="SampleWorker2.cs" />
+    <Compile Include="SampleWorker3.cs" />
+    <Compile Include="SampleWorker4.cs" />
+    <Compile Include="SampleWorker5.cs" />
+  </ItemGroup>
 </Project>
